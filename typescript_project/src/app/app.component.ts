@@ -8,22 +8,34 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  arr: (number | string)[] = [1, 2]; // hier wird ein Array erwartet, das entweder Zahlen oder Strings enthalten kan
-  // arr: number | string[] = [1, 2]; // funktioniert auch nicht weil es ein Array ist, das nur Zahlen oder Strings enthalten soll
-  constructor() {
-    this.arr = [112, "456"] // erwartet wird eine number, aber es wird ein String übergeben
-    this.add(1, 2); // hier wird add aufgerufen, die Parameter sind Zahlen
-}
-add (a:number, b:number) { //vordefinieren was für ein typen die Parameter haben sollen
-    return a + b;
-} 
+  title = 'Typesccript';
+//tupels
+//   noteType: 200 | 404 = 404;
+
+//   arr: [string, number] = ["200", 404];
+//   constructor() {
+//     this.arr = ["402", 404];
+// }
 }
 
 //#region comments
+// literals
+// noteType: 200 | 404 = 400;
+  
 
-// add (a:number, b:number):number { // das was nach den klammern kommt, ist der Rückgabetyp der Funktion
-//     return a + b;
-// }
-// wenn kein returnwert angegeben wird, ist der rückgabetyp undefiniert
+//   arr: [string, 200 | 404][] = []
 
+//   constructor() {
+//     this.noteType = "note";
+
+//     this.handleNoteType();
+//   }
+
+//   handleNoteType() {
+//     if (this.noteType === "note") {
+//       console.log("Notiz wird angezeigt.");
+//     } else if (this.noteType === "trash") {
+//       console.log("Notiz befindet sich im Papierkorb.");
+//     }
+//   }
 //#endregion
