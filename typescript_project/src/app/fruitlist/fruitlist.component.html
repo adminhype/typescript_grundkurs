@@ -1,5 +1,5 @@
 <div class="fruitlist_content">
-  @for(item of fruitlist; track item.name){
+  @for(item of fruitlist; track item.name; let index = $index){
   <section class="singleFruitBox">
     <div>
       <img src="./assets/img/fruits/{{ item.img }}" alt="" srcset="" />
@@ -9,11 +9,26 @@
       <div>
         <p><b>Bewertung:</b></p>
         <div>
-          <img src="./assets/img/stars/star.svg" alt="" srcset="" />
-          <img src="./assets/img/stars/star.svg" alt="" srcset="" />
-          <img src="./assets/img/stars/star.svg" alt="" srcset="" />
-          <img src="./assets/img/stars/star-half.svg" alt="" srcset="" />
-          <img src="./assets/img/stars/star-empty.svg" alt="" srcset="" />
+          <!-- @for (i of [1, 2, 3, 4, 5]; track fruitlist) { @if (i <= item.stars) {
+          <img src="./assets/img/stars/star.svg" alt="" />
+          } @else if(i <= item.stars - 0.5) {
+          <img src="./assets/img/stars/star-half.svg" alt="" />
+          } @else {
+          <img src="./assets/img/stars/star-empty.svg" alt="" />
+          } } -->
+
+          <!-- alternative for loop um die Sterne anzuzeigen -->
+
+          <!-- varriante mit count ist besser, da sie nicht über die gesamte liste iteriert sondern nur über die anzahl der sterne -->
+
+          @for (count of [1, 2, 3, 4, 5]; track fruitlist) { @if (item.stars >=
+          count) {
+          <img src="./assets/img/stars/star.svg" alt="" />
+          } @else if(item.stars >= count - 0.5) {
+          <img src="./assets/img/stars/star-half.svg" alt="" />
+          } @else {
+          <img src="./assets/img/stars/star-empty.svg" alt="" />
+          } }
           <p>({{ item.stars }})</p>
         </div>
       </div>
