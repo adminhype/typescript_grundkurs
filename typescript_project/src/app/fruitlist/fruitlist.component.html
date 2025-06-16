@@ -1,2 +1,8 @@
-<p>fruitlist works! {{ itWorks }}</p>
-<p>fruitlist works! {{ fruitlist[2].name }}</p>
+@for(item of fruitlist; track item.name; let last = $first){
+<p>{{ last }}: {{ item.name }}</p>
+}
+<!-- Was für ein array haben wir ? fruitlist -->
+<!-- variable bennenen(definieren) mit item -->
+<!-- was soll getrackt werden? item.name, in unserem Fall der Name des Objekts -->
+<!-- Mehr definieren möglich später dokumentation in Angular nachschauen let last = $first -->
+<!-- $first ist eine Variable, die true ist, wenn es das erste Element in der Schleife ist -->

@@ -8,11 +8,6 @@ import { Component } from '@angular/core';
 })
 
 export class FruitlistComponent {
-  itWorks = "not bad, buddy";
-
-
-
-
   fruitlist = [
     {
       name: "Apfel",
