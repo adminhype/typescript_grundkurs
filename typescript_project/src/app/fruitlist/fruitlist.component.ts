@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: './fruitlist.component.html',
   styleUrl: './fruitlist.component.scss'
 })
+
 export class FruitlistComponent {
+  itWorks = "not bad, buddy";
+
+
+
+
   fruitlist = [
     {
       name: "Apfel",
