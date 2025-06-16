@@ -21,7 +21,15 @@
       <div><b>Beschreibung:</b><br />{{ item.description }}</div>
       <div>
         <div>
-          <!-- <div><b>{{review.name}}:</b><br>{{review.text}}</div> -->
+          <div>
+            @for(review of item.reviews; track review){
+            <!-- for schleife nicht über die liste sondern über die reviews des jeweiligen items -->
+            <b>{{ review.name }}:</b><br />{{ review.text }}
+            }@empty {
+            <!-- empty block wenn keine reviews vorhanden sind -->
+            <p>Keine Bewertungen vorhanden.</p>
+            }
+          </div>
         </div>
         <div>
           <input type="text" /><button>
