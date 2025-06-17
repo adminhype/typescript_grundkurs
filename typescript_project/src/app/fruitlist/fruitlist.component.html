@@ -11,19 +11,19 @@
                 <div>
                     <!-- switchcase -->
                     <!-- @for(count of [1,2,3,4,5]; track count){ @switch (true) {
-                      @case(item.stars >= count){
-                      <img src="/assets/img/stars/star.svg" alt="" />
-                      } @case(item.stars >= count - 0.5){
-                      <img src="/assets/img/stars/star-half.svg" alt="" />
-                      }@default {
-                      <img src="/assets/img/stars/star-empty.svg" alt="" />
-                      } } } -->
+                    @case(item.stars >= count){
+                    <img src="/assets/img/stars/star.svg" alt="" />
+                    } @case(item.stars >= count - 0.5){
+                    <img src="/assets/img/stars/star-half.svg" alt="" />
+                    }@default {
+                    <img src="/assets/img/stars/star-empty.svg" alt="" />
+                    } } } -->
 
                     <!-- switchcase dynamisches array -->
 
                     <!-- Bewertungssterne dynamisch anzeigen:
-                      - Schleife über 5 Sterne (getStar())
-                      - switch(true): prüft, wie viele Sterne item.stars hat -->
+                    - Schleife über 5 Sterne (getStar())
+                    - switch(true): prüft, wie viele Sterne item.stars hat -->
                     @for(count of getStar(); track count){ @switch (true) {
                     @case(item.stars >= count){
                     <img src="/assets/img/stars/star.svg" alt="" />
@@ -33,7 +33,13 @@
                     <img src="/assets/img/stars/star-empty.svg" alt="" />
                     } } }
 
-                    <p [style]="{ 'background-color': fontColor }">
+                    <!-- elemente müssen mit sonderzeichen gesetzt werden nur wenn leerzeichen, bindestrich oder dynamisch klassen zusammensetzen -->
+                    <p
+                        [class]="{
+                            rateBad: item.stars < 3,
+                            rateGood: item.stars >= 3
+                        }"
+                    >
                         ({{ item.stars }})
                     </p>
                 </div>

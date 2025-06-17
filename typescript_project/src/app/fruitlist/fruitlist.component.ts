@@ -9,7 +9,11 @@ import { Component } from '@angular/core';
 
 export class FruitlistComponent {
 
-  fontColor = "yellow";
+// rateGood = "green";
+// rateBad = "red";
+
+
+
   /* 
     Erstellt ein Array mit den Werten [1, 2, 3, 4, 5]
     Wird z. B. genutzt zur Darstellung von Sternen in einem Rating-System
