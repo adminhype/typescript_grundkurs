@@ -8,6 +8,20 @@ import { Component } from '@angular/core';
 })
 
 export class FruitlistComponent {
+
+  fontColor = "yellow";
+  /* 
+    Erstellt ein Array mit den Werten [1, 2, 3, 4, 5]
+    Wird z. B. genutzt zur Darstellung von Sternen in einem Rating-System
+  */
+  getStar(): Array<number>{
+    let result  = [];
+    for(let i = 1; i <= 5; i++){
+      result.push(i)
+    }
+    return result; 
+  }
+
   fruitlist = [
     {
       name: "Apfel",
