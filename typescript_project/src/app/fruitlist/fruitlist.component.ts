@@ -10,22 +10,8 @@ import { SinglefruitComponent } from "./singlefruit/singlefruit.component";
 
 export class FruitlistComponent {
 
-// rateGood = "green";
-// rateBad = "red";
 
 
-
-  /* 
-    Erstellt ein Array mit den Werten [1, 2, 3, 4, 5]
-    Wird z. B. genutzt zur Darstellung von Sternen in einem Rating-System
-  */
-  getStar(): Array<number>{
-    let result  = [];
-    for(let i = 1; i <= 5; i++){
-      result.push(i)
-    }
-    return result; 
-  }
 
   fruitlist = [
     {
@@ -77,4 +63,7 @@ export class FruitlistComponent {
       reviews:[{name: "Kevin W.", text: "Ganz gut in der Regel!"},{name: "Oliver J.", text: "Absoluter Favorit beim Frühstück"}],
     },
   ]
+  numLog(index: number){
+    console.log(index);
+  }
 }
